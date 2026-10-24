@@ -57,8 +57,14 @@ git clone https://github.com/gloaming-dusk/shady-rice-touhou
 SHADY_ROOT=~/path/to/shady ./shady-rice-touhou/run.sh
 ```
 
-`run.sh` builds the point-item plugin (`build.sh`) the first time; it needs
-a C compiler and Shady's headers, which the Shady checkout has.
+Or directly on a VT (DRM + libinput), from a TTY login:
+
+```sh
+SHADY_ROOT=~/path/to/shady ./shady-rice-touhou/run-native.sh
+```
+
+Both build the point-item plugin (`build.sh`) the first time; it needs a C
+compiler and Shady's headers, which the Shady checkout has.
 
 ## Use it as your session
 
