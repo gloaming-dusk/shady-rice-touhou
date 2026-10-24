@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Neovim
+Exec=nvim
+Categories=Utility;TextEditor;Development;

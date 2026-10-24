@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Settings
+Exec=gnome-control-center
+Categories=Settings;

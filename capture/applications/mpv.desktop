@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=mpv
+Exec=mpv
+Categories=AudioVideo;Video;Player;

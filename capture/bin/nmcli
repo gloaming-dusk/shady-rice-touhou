@@ -1,0 +1,6 @@
+#!/bin/sh
+# capture.sh stub: a Wi-Fi network named Hakurei.
+case "$*" in
+    *device\ wifi*) echo "yes:Hakurei" ;;
+esac
+exit 0

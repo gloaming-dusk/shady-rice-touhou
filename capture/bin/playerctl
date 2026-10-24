@@ -1,0 +1,4 @@
+#!/bin/sh
+# capture.sh stub: a record playing.
+[ "$1" = metadata ] && printf 'Playing\t少女綺想曲 ～ Dream Battle\tTeam Shanghai Alice\t2:14\t4:56\n'
+exit 0

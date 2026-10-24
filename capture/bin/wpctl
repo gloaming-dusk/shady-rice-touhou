@@ -1,0 +1,4 @@
+#!/bin/sh
+# capture.sh stub: the volume at 60%.
+[ "$1" = get-volume ] && echo "Volume: 0.60"
+exit 0

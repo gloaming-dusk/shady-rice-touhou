@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=LibreOffice Writer
+Exec=lowriter
+Categories=Office;WordProcessor;
