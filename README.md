@@ -52,6 +52,10 @@ You need a Shady checkout built with `./tools/build.sh`, recent enough for
 side panels, application categories and `u_uv_rect` in plugin shaders.
 From your Wayland desktop:
 
+It also needs [shady-shell](https://github.com/gloaming-dusk/shady-shell),
+which is a project of its own: built in `../shady-shell` next to this
+checkout, on `PATH`, or named by `SHADY_SHELL_BIN`.
+
 ```sh
 git clone https://github.com/gloaming-dusk/shady-rice-touhou
 SHADY_ROOT=~/path/to/shady ./shady-rice-touhou/run.sh

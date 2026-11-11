@@ -14,9 +14,14 @@
 set -euo pipefail
 RICE="$(cd "$(dirname "$0")" && pwd)"
 ROOT="$(cd "${SHADY_ROOT:-$RICE/../shady}" && pwd)"
-for bin in shady shady-shell; do
-    [[ -x "$ROOT/build/$bin" ]] || { echo "capture: $ROOT/build/$bin is missing" >&2; exit 1; }
-done
+[[ -x "$ROOT/build/shady" ]] || { echo "capture: $ROOT/build/shady is missing" >&2; exit 1; }
+# shady-shell is its own project: $SHADY_SHELL_BIN, ../shady-shell/build, or PATH.
+SHELL_BIN="${SHADY_SHELL_BIN:-}"
+if [[ -z "$SHELL_BIN" && -x "$RICE/../shady-shell/build/shady-shell" ]]; then
+    SHELL_BIN="$(cd "$RICE/../shady-shell/build" && pwd)/shady-shell"
+fi
+[[ -n "$SHELL_BIN" ]] || SHELL_BIN="$(command -v shady-shell || true)"
+[[ -x "$SHELL_BIN" ]] || { echo "capture: no shady-shell (set SHADY_SHELL_BIN)" >&2; exit 1; }
 for tool in dbus-run-session busctl foot; do
     command -v "$tool" >/dev/null || { echo "capture: needs $tool" >&2; exit 1; }
 done
@@ -36,7 +41,7 @@ printf 'include=%s\n[main]\nfont=monospace:size=10\n' "$RICE/extras/foot.ini" >"
     export WLR_BACKENDS=headless WLR_HEADLESS_OUTPUTS=1 WLR_RENDERER=gles2
     export SHADY_ROOT="$ROOT" SHADY_TOUHOU_DIR="$RICE"
     export SHADY_LUA_INIT="$RICE/capture/init.lua"
-    export SHADY_SHELL_BIN="$ROOT/build/shady-shell"
+    export SHADY_SHELL_BIN="$SHELL_BIN"
     export SHADY_SHELL_CONFIG="$RICE/shell.lua"
     export CAPTURE_OUT="$work" CAPTURE_STATUS="$work/status" CAPTURE_FOOT_INI="$work/foot.ini"
     export PATH="$RICE/capture/bin:$PATH"

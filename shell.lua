@@ -6,7 +6,7 @@
 -- music as the BGM. The launcher declares a spell card, notifications are
 -- Bunbunmaru extras, urgent ones cut in across the screen like a spell
 -- card, and a new song is announced like a stage's BGM. The API is
--- documented in Shady's docs/SHELL_LUA_API.md.
+-- documented in shady-shell's docs/SHELL_LUA_API.md (github.com/gloaming-dusk/shady-shell).
 
 local RED, RED_LIGHT, PAPER = "#C8283C", "#E86A7A", "#F4EEE3"
 local GOLD, VIOLET, NIGHT = "#E8B84A", "#7A5CC9", "#120E2A"
